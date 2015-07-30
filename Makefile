@@ -4,13 +4,16 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
+SPHINXINTL    = sphinx-intl
 PAPER         =
-BUILDDIR      = _build
+#BUILD_DIR      = _build
+BUILDDIR      = /wassup/built-docs
 
 # User-friendly check for sphinx-build
-ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
-$(error The '$(SPHINXBUILD)' command was not found. Make sure you have Sphinx installed, then set the SPHINXBUILD environment variable to point to the full path of the '$(SPHINXBUILD)' executable. Alternatively you can add the directory with the executable to your PATH. If you don't have Sphinx installed, grab it from http://sphinx-doc.org/)
-endif
+SPHINXBUILDCHECK= := $(shell which $(SPHINXBUILD) 2>/dev/null)
+.ifndef SPHINXBUILDCHECK
+.error "The '$(SPHINXBUILD)' command was not found. Make sure you have Sphinx installed, then set the SPHINXBUILD environment variable to point to the full path of the '$(SPHINXBUILD)' executable. Alternatively you can add the directory with the executable to your PATH. If you don\'t have Sphinx installed, grab it from http://sphinx-doc.org/)"
+.endif
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -45,22 +48,55 @@ help:
 	@echo "  pseudoxml  to make pseudoxml-XML files for display purposes"
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
+	@echo "  i18n       to fetch and prep the i18n files"
+
+i18n:
+	$(MAKE) gettext
+	$(SPHINXINTL) update -p $(BUILDDIR)/locale-po -l de -l fr -l es -l pt_BR -l uk
+	@fetch -o $(BUILDDIR)/pcbsd-handbook-i18n.txz https://github.com/pcbsd/pcbsd-i18n/raw/master/dist/pcbsd-handbook-i18n.txz
+	@tar xpf $(BUILDDIR)/pcbsd-handbook-i18n.txz -C $(BUILDDIR)/locale-po/de/LC_MESSAGES --strip-components 2 ./de/
+	@tar xpf $(BUILDDIR)/pcbsd-handbook-i18n.txz -C $(BUILDDIR)/locale-po/es/LC_MESSAGES --strip-components 2 ./es/
+	@tar xpf $(BUILDDIR)/pcbsd-handbook-i18n.txz -C $(BUILDDIR)/locale-po/fr/LC_MESSAGES --strip-components 2 ./fr/
+	@tar xpf $(BUILDDIR)/pcbsd-handbook-i18n.txz -C $(BUILDDIR)/locale-po/pt_BR/LC_MESSAGES --strip-components 2 ./pt_BR/
+	@tar xpf $(BUILDDIR)/pcbsd-handbook-i18n.txz -C $(BUILDDIR)/locale-po/uk/LC_MESSAGES --strip-components 2 ./uk/
+	$(SPHINXINTL) build
 
 clean:
 	rm -rf $(BUILDDIR)/*
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+.if exists($(BUILDDIR)/locale-po)
+	$(SPHINXBUILD) -D language='de' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html-de
+	$(SPHINXBUILD) -D language='es' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html-es
+	$(SPHINXBUILD) -D language='fr' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html-fr
+	$(SPHINXBUILD) -D language='pt_BR' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html-pt_BR
+	$(SPHINXBUILD) -D language='uk' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html-uk
+.endif
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
+.if exists($(BUILDDIR)/locale-po)
+	$(SPHINXBUILD) -D language='de' -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml-de
+	$(SPHINXBUILD) -D language='es' -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml-es
+	$(SPHINXBUILD) -D language='fr' -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml-fr
+	$(SPHINXBUILD) -D language='pt_BR' -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml-pt_BR
+	$(SPHINXBUILD) -D language='uk' -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml-uk
+.endif
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
 
 singlehtml:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
+.if exists($(BUILDDIR)/locale-po)
+	$(SPHINXBUILD) -D language='de' -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml-de
+	$(SPHINXBUILD) -D language='es' -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml-es
+	$(SPHINXBUILD) -D language='fr' -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml-fr
+	$(SPHINXBUILD) -D language='pt_BR' -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml-pt_BR
+	$(SPHINXBUILD) -D language='uk' -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml-uk
+.endif
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 

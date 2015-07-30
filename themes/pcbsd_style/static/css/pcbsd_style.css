@@ -1,24 +1,22 @@
 /**** Hand built CSS theme ****/
 /*** original ****/
+/* make change visible */
+.wy-nav-side, div.related {
+    background-color: #0000ff!important;
+}
 
 code.kbd,
 code.file,
-.kbd,
-.file {
-    # background-color: #ecf0f3;
-    background-color: #DDE0E2; // darken to be more visible on screen.
-    padding: 0 1px 0 1px;
+.kbd, .file {
+    background-color: #DCE0E3; // darken from ecf0f3 to be more visible on screen.
     display: inline-block;
     font-size: 90%;
-    vertical-align: 10%;
-    padding-right: 3px;
-    padding-left: 3px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    border-radius: 1px;
-    line-height: 82%;
-    border: thin solid #000000;
+    vertical-align:11%;
+    padding:1px;
+    line-height:80%;
+    border: thin solid #999;
 }
+
 th {
     background-color: #ede;
 }
@@ -36,26 +34,108 @@ th {
     }
     ;
 }
+
 div.viewcode-block:target {
     background-color: #f4debf;
     border-top: 1px solid #ac9;
     border-bottom: 1px solid #ac9;
 }
+
 .menuselection {
     background-color: #F0F0F0;
     color: inherit;
     display: inline-block;
-    font-size: 90%;
-    vertical-align: 10%;
-    padding-right: 3px;
-    padding-left: 3px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    border-radius: 5px;
-    line-height: 82%;
+    font-size: 88%;
+    vertical-align:10%;
+    padding-right:3px;
+    padding-left:3px;
+    padding-top:3px;
+    padding-bottom:2px;
+    border-radius:5px;
+    line-height:80%;
     border: thin solid #000000;
+    }
+
+/*"""""""""""""""""""""""""""""""""""""""""""""""*
+ |    Try to allow for printing from browser     | 
+ |    with reasonable appearance                 | 
+ *"""""""""""""""""""""""""""""""""""""""""""""""*/
+@media print {
+
+div [role=navigation] {
+    display:none!important;
 }
+
+div [aria-label="breadcrumbs navigation"] {
+    display:none!important;
+}
+
+.wy-nav-side {
+    display:none!important;
+}
+
+ul.breadcrumbs {
+    display:none!important;
+}
+
+.wy-breadcrumbs-aside {
+    display:none!important;
+}
+
+.wy-nav-content {
+    padding: 1.618em 3.236em;
+    height: auto;
+    width: auto;
+//    max-width: 800px;
+    margin: auto;
+}
+    }
+
+/*"""""""""""""""""""""""""""""""""""""""""""""""*
+ |    Try to allow for printing from browser     | 
+ |    with reasonable appearance                 | 
+ *"""""""""""""""""""""""""""""""""""""""""""""""*/
+
 /*** original ****/
+
+div.warning {
+#background: #efc2c2;
+    background-color: #FFE4E4;
+    border: 1px solid #F66;
+}
+
+div.note {
+
+    background-color: #EEE;
+    border: 1px solid #CCC;
+
+}
+
+p.admonition-title {
+    display: inline;
+    margin: 0px 3px 5px 0px;
+    font-weight: bold;
+    font-family: sans-serif!important;
+}
+
+p.last {
+    margin: 0px 3px 5px 0px;
+}
+
+p.first {
+    margin: 0px 3px 5px 0px;
+}
+
+div.admonition {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 7px;
+}
+div.admonition p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 7px;
+}
 
 .wy-nav-side {
     position: fixed;
@@ -733,14 +813,12 @@ textarea {
 .rst-content .warning .admonition-title,
 .rst-content .wy-alert-warning.seealso .admonition-title,
 .rst-content .admonition-todo .admonition-title {
-    background: #F0B37E none repeat scroll 0% 0%;
 }
 .wy-alert-title,
 .rst-content .admonition-title {
     font-weight: bold;
     display: block;
-    color: #FFF;
-    background: #6AB0DE none repeat scroll 0% 0%;
+    color: #000;
     margin: -12px -12px 12px;
     padding: 6px 12px;
 }
@@ -1208,14 +1286,12 @@ a .icon {
 .rst-content .wy-alert-info.warning .admonition-title,
 .rst-content .seealso .admonition-title,
 .rst-content .wy-alert-info.admonition-todo .admonition-title {
-    background: #6AB0DE none repeat scroll 0% 0%;
 }
 .wy-alert-title,
 .rst-content .admonition-title {
     font-weight: bold;
     display: block;
-    color: #FFF;
-    background: #6AB0DE none repeat scroll 0% 0%;
+    color: #000;
     margin: -12px -12px 12px;
     padding: 6px 12px;
 }
@@ -1261,7 +1337,6 @@ a .icon {
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
-    font-weight: normal;
     line-height: 1;
     font-size-adjust: none;
     font-stretch: normal;
@@ -1273,8 +1348,98 @@ a .icon {
     font-size: inherit;
     text-rendering: auto;
 }
-p {
-    line-height: 24px;
-    margin: 0px 0px 24px;
-    font-size: 16px;
+
+div.admonition p {
+    margin-bottom: 5px;
+}
+div.body p, div.body dd, div.body li {
+    text-align: justify;
+    line-height: 130%;
+}
+p.admonition-title {
+    display: inline;
+    font-family: sans-serif;
+    font-size: 100%;
+    color: #000;
+}
+p.admonition-title {
+    margin: 0px 10px 5px 0px;
+    font-weight: bold;
+}
+
+div.body p, div.body dd, div.body li {
+    text-align: justify;
+    line-height: 130%;
+}
+
+div.body {
+    color: #000;
+}
+body {
+    font-family: sans-serif;
+    font-size: 100%;
+    color: #000;
+}
+
+p.admonition-title::after {
+    content: ":";
+}
+
+div.body p, div.body dd, div.body li {
+    text-align: justify;
+    line-height: 130%;
+}
+p.admonition-title {
+    font-weight: bold;
+}
+
+div.body {
+    color: #000;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 100%;
+    color: #000;
+}
+div.admonition p {
+    margin-bottom: 5px;
+}
+div.body p, div.body dd, div.body li {
+    text-align: justify;
+    line-height: 130%;
+}
+p.admonition-title {
+    display: inline;
+}
+p.admonition-title {
+    margin: 0px 10px 5px 0px;
+    font-weight: bold;
+}
+div.admonition p {
+    margin-bottom: 5px;
+}
+div.body p, div.body dd, div.body li {
+    text-align: justify;
+    line-height: 130%;
+}
+p.admonition-title {
+    display: inline;
+}
+p.admonition-title {
+    margin: 0px 10px 5px 0px;
+    font-weight: bold;
+}
+.first {
+    margin-top: 0px !important;
+}
+div.admonition p.admonition-title + p {
+    display: inline;
+}
+div.admonition p {
+    margin-bottom: 5px;
+}
+div.body p, div.body dd, div.body li {
+    text-align: justify;
+    line-height: 130%;
 }
