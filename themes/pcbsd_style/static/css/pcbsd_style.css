@@ -95,12 +95,12 @@ th.spiffy_span {
     text-align: center;
     font-size: 125%;
 }
-tr:nth-child(odd) > td,
+.docutils tr:nth-child(odd) > td,
 .spiffy_table tr:nth-child(odd) > td {
     background-color: #e5e5e5;
     /* was gainsboro then f2f2f2 */
 }
-tr:nth-child(even) > td,
+.docutils tr:nth-child(even) > td,
 .spiffy_table tr:nth-child(even) > td {
     background-color: white;
 }
@@ -114,7 +114,7 @@ tr:nth-child(even) > td,
 .spiffy_table tr > td.done {
     background-color: green;
 }
-th,
+.docutils th,
 .spiffy_table th {
     background-color: LemonChiffon;
     font-weight: 700;
@@ -138,7 +138,7 @@ table.docutils caption,
     font-weight: 700;
     text-align: left;
 }
-td,
+.docutils td,
 .spiffy_table td,
 .simple_table td {
     border-color: darkgray;
