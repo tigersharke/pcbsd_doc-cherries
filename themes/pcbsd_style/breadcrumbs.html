@@ -1,10 +1,10 @@
-<div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="{{ pathto(master_doc) }}">Docs</a> &raquo;</li>
+<div class="wy-breadcrumbs-nav" role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs-nav">
+    <li class="wy-breadcrumbs-nav"><a href="{{ pathto(master_doc) }}">Docs</a> &raquo;</li>
       {% for doc in parents %}
-          <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
+          <li class="wy-breadcrumbs-title"><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
       {% endfor %}
-    <li>{{ title }}</li>
+    <li class="wy-breadcrumbs-nav">{{ title }}</li>
       <li class="wy-breadcrumbs-aside">
         {% if pagename != "search" %}
           {% if display_github %}
@@ -20,4 +20,5 @@
       </li>
   </ul>
   <hr/>
+&nbsp;
 </div>
