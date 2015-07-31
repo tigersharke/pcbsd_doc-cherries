@@ -2,7 +2,7 @@
 /*** original ****/
 /* make change visible */
 .wy-nav-side, div.related {
-    background-color: #0000ff!important;
+    background-color: #0f0df0!important;
 }
 
 code.kbd,
@@ -57,43 +57,39 @@ div.viewcode-block:target {
     }
 
 /*"""""""""""""""""""""""""""""""""""""""""""""""*
- |    Try to allow for printing from browser     | 
- |    with reasonable appearance                 | 
+ |    Allow for printing from browser            | 
+ |    with reasonable appearance        (BEGIN)  | 
  *"""""""""""""""""""""""""""""""""""""""""""""""*/
 @media print {
 
-div [role=navigation] {
-    display:none!important;
-}
+   .wy-side-nav-search {
+       display:none!important;
+       }
 
-div [aria-label="breadcrumbs navigation"] {
-    display:none!important;
-}
+   .wy-nav-top {
+       display:none!important;
+       }
 
-.wy-nav-side {
-    display:none!important;
-}
+   .wy-nav-side {
+       display:none!important;
+       }
 
-ul.breadcrumbs {
-    display:none!important;
-}
+   .wy-nav-content {
+       padding: 1.618em;
+       height: auto;
+       width: auto;
+       margin: auto;
+       }
 
-.wy-breadcrumbs-aside {
-    display:none!important;
+   .wy-breadcrumbs-nav {
+       display:none!important;
+       visibility: hidden!important;
+       }
 }
-
-.wy-nav-content {
-    padding: 1.618em 3.236em;
-    height: auto;
-    width: auto;
-//    max-width: 800px;
-    margin: auto;
-}
-    }
 
 /*"""""""""""""""""""""""""""""""""""""""""""""""*
- |    Try to allow for printing from browser     | 
- |    with reasonable appearance                 | 
+ |    Allow for printing from browser            | 
+ |    with reasonable appearance         (END)   | 
  *"""""""""""""""""""""""""""""""""""""""""""""""*/
 
 /*** original ****/
@@ -1442,4 +1438,4 @@ div.admonition p {
 div.body p, div.body dd, div.body li {
     text-align: justify;
     line-height: 130%;
-}
+N}
