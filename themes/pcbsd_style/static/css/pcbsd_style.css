@@ -1,22 +1,24 @@
 /**** Hand built CSS theme ****/
 /*** original ****/
 /* make change visible */
-.wy-nav-side, div.related {
-    background-color: #0f0df0!important;
-}
 
+.wy-nav-side,
+div.related {
+    background-color: #0D0DE5!important;
+    /* was 0f0df0 */
+}
 code.kbd,
 code.file,
-.kbd, .file {
-    background-color: #DCE0E3; // darken from ecf0f3 to be more visible on screen.
+.kbd,
+.file {
+    background-color: #D5DDE2; // saturate from ecf0f3 to be more visible/blue on screen.
     display: inline-block;
     font-size: 90%;
-    vertical-align:11%;
-    padding:1px;
-    line-height:80%;
+    vertical-align: 11%;
+    padding: 1px;
+    line-height: 80%;
     border: thin solid #999;
 }
-
 th {
     background-color: #ede;
 }
@@ -34,105 +36,201 @@ th {
     }
     ;
 }
-
 div.viewcode-block:target {
     background-color: #f4debf;
     border-top: 1px solid #ac9;
     border-bottom: 1px solid #ac9;
 }
-
 .menuselection {
     background-color: #F0F0F0;
     color: inherit;
     display: inline-block;
     font-size: 88%;
-    vertical-align:10%;
-    padding-right:3px;
-    padding-left:3px;
-    padding-top:3px;
-    padding-bottom:2px;
-    border-radius:5px;
-    line-height:80%;
+    vertical-align: 10%;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    line-height: 80%;
     border: thin solid #000000;
-    }
+}
+/**************************************************************************
+ * Here is the Spiffy Table which allows for nice colors, bold titles and *
+ * alternating white/grey rows. It does not display entirely well when a  *
+ * rowspan=x is defined. This is used by template tbl-init or can be used *
+ * alone by specifying class=spiffy_table.  A plain table without a mild  *
+ * background color but otherwise similar format may be used by adding    *
+ * class=simple_table, one with no background color is class=plain_table. *
+ **************************************************************************/
 
+table.docutils,
+table.spiffy_table,
+table.simple_table,
+table.plain_table {
+    border: 2px solid darkgray;
+    border-collapse: collapse;
+}
+.simple_table th {
+    background-color: #f2f2f2;
+}
+th.simple_span {
+    background-color: #f2f2f2;
+}
+th.spiffy_span {
+    background-color: LemonChiffon;
+    background: -webkit-linear-gradient(MediumSpringGreen, LemonChiffon, LemonChiffon, LemonChiffon, MediumSpringGreen);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(MediumSpringGreen, LemonChiffon, LemonChiffon, LemonChiffon, MediumSpringGreen);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(MediumSpringGreen, LemonChiffon, LemonChiffon, LemonChiffon, MediumSpringGreen);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(MediumSpringGreen, LemonChiffon, LemonChiffon, LemonChiffon, MediumSpringGreen);
+    /* Standard syntax (must be last) */
+    
+    font-weight: 700;
+    text-align: center;
+    font-size: 125%;
+}
+tr:nth-child(odd) > td,
+.spiffy_table tr:nth-child(odd) > td {
+    background-color: #e5e5e5;
+    /* was gainsboro then f2f2f2 */
+}
+tr:nth-child(even) > td,
+.spiffy_table tr:nth-child(even) > td {
+    background-color: white;
+}
+.spiffy_table tr > td.zero {
+    background-color: red;
+    color: white;
+}
+.spiffy_table tr > td.part {
+    background-color: yellow;
+}
+.spiffy_table tr > td.done {
+    background-color: green;
+}
+th,
+.spiffy_table th {
+    background-color: LemonChiffon;
+    font-weight: 700;
+    text-align: center;
+    border-color: darkgray;
+    border-style: solid;
+    border-width: 1px 1px 2px;
+    padding: 5px;
+}
+.simple_table th {
+    font-weight: 700;
+    text-align: center;
+    border-color: darkgray;
+    border-style: solid;
+    border-width: 0px 1px 2px;
+    padding: 5px;
+}
+table.docutils caption,
+.spiffy_table caption,
+.simple_table caption {
+    font-weight: 700;
+    text-align: left;
+}
+td,
+.spiffy_table td,
+.simple_table td {
+    border-color: darkgray;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+}
+/*
+table.docutils td, table.docutils th {
+    padding: 1px 8px 1px 5px;
+    border-width: 0px 0px 1px;
+    border-style: none none solid;
+    border-color: -moz-use-text-color -moz-use-text-color #AAA;
+}
+
+th {
+    background-color: #EDE;
+}
+
+th {
+    text-align: left;
+    padding-right: 5px;
+}
+
+table.docutils {
+    border-collapse: collapse;
+}
+
+*/
 /*"""""""""""""""""""""""""""""""""""""""""""""""*
  |    Allow for printing from browser            | 
  |    with reasonable appearance        (BEGIN)  | 
  *"""""""""""""""""""""""""""""""""""""""""""""""*/
+
 @media print {
-
-   .wy-side-nav-search {
-       display:none!important;
-       }
-
-   .wy-nav-top {
-       display:none!important;
-       }
-
-   .wy-nav-side {
-       display:none!important;
-       }
-
-   .wy-nav-content {
-       padding: 1.618em;
-       height: auto;
-       width: auto;
-       margin: auto;
-       }
-
-   .wy-breadcrumbs-nav {
-       display:none!important;
-       visibility: hidden!important;
-       }
+    .wy-side-nav-search {
+        display: none!important;
+    }
+    .wy-nav-top {
+        display: none!important;
+    }
+    .wy-nav-side {
+        display: none!important;
+    }
+    .wy-nav-content {
+        padding: 1.618em;
+        height: auto;
+        width: auto;
+        margin: auto;
+    }
+    .wy-breadcrumbs-nav {
+        display: none!important;
+        visibility: hidden!important;
+    }
 }
-
 /*"""""""""""""""""""""""""""""""""""""""""""""""*
  |    Allow for printing from browser            | 
  |    with reasonable appearance         (END)   | 
  *"""""""""""""""""""""""""""""""""""""""""""""""*/
-
 /*** original ****/
 
 div.warning {
-#background: #efc2c2;
+    #background: #efc2c2;
     background-color: #FFE4E4;
     border: 1px solid #F66;
 }
-
 div.note {
-
     background-color: #EEE;
     border: 1px solid #CCC;
-
 }
-
 p.admonition-title {
     display: inline;
     margin: 0px 3px 5px 0px;
     font-weight: bold;
     font-family: sans-serif!important;
 }
-
 p.last {
     margin: 0px 3px 5px 0px;
 }
-
 p.first {
     margin: 0px 3px 5px 0px;
 }
-
 div.admonition {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 7px;
 }
-div.admonition p{
+div.admonition p {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 7px;
 }
-
 .wy-nav-side {
     position: fixed;
     top: 0px;
@@ -143,7 +241,7 @@ div.admonition p{
     overflow-x: hidden;
     overflow-y: scroll;
     min-height: 100%;
-    background: #343131 none repeat scroll 0% 0%;
+    //background: #2676A8 none repeat scroll 0% 0%;  /* was 343131 */
     z-index: 200;
 }
 .wy-side-nav-search > a,
@@ -255,41 +353,19 @@ legend {
     margin: auto;
 }
 .wy-side-nav-search input[type="text"] {
-    width: 100%;
+    width: 90%;
     border-radius: 50px;
     padding: 6px 12px;
     border-color: #2472A4;
 }
 input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
 input[type="search"]:focus,
-input[type="tel"]:focus,
 input[type="color"]:focus {
     outline: 0px none;
     border-color: #333;
 }
 input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="number"],
 input[type="search"],
-input[type="tel"],
 input[type="color"] {
     padding: 6px;
     display: inline-block;
@@ -630,7 +706,9 @@ img {
 }
 .wy-side-nav-search {
     z-index: 200;
-    background-color: #2980B9;
+    background-color: #2DAEFF;
+    /* was 2676A8, 2980b9 */
+    
     text-align: center;
     padding: 0.809em;
     display: block;
@@ -647,7 +725,7 @@ img {
     overflow-x: hidden;
     overflow-y: scroll;
     min-height: 100%;
-    background: #343131 none repeat scroll 0% 0%;
+    //    background: #343131 none repeat scroll 0% 0%;
     z-index: 200;
 }
 article,
@@ -661,12 +739,6 @@ hgroup,
 nav,
 section {
     display: block;
-}
-.wy-side-nav-search input[type="text"] {
-    width: 100%;
-    border-radius: 50px;
-    padding: 6px 12px;
-    border-color: #2472A4;
 }
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -808,9 +880,7 @@ textarea {
 .rst-content .wy-alert-warning.tip .admonition-title,
 .rst-content .warning .admonition-title,
 .rst-content .wy-alert-warning.seealso .admonition-title,
-.rst-content .admonition-todo .admonition-title {
-}
-.wy-alert-title,
+.rst-content .admonition-todo .admonition-title {} .wy-alert-title,
 .rst-content .admonition-title {
     font-weight: bold;
     display: block;
@@ -1281,9 +1351,7 @@ a .icon {
 .rst-content .wy-alert-info.tip .admonition-title,
 .rst-content .wy-alert-info.warning .admonition-title,
 .rst-content .seealso .admonition-title,
-.rst-content .wy-alert-info.admonition-todo .admonition-title {
-}
-.wy-alert-title,
+.rst-content .wy-alert-info.admonition-todo .admonition-title {} .wy-alert-title,
 .rst-content .admonition-title {
     font-weight: bold;
     display: block;
@@ -1344,11 +1412,12 @@ a .icon {
     font-size: inherit;
     text-rendering: auto;
 }
-
 div.admonition p {
     margin-bottom: 5px;
 }
-div.body p, div.body dd, div.body li {
+div.body p,
+div.body dd,
+div.body li {
     text-align: justify;
     line-height: 130%;
 }
@@ -1362,12 +1431,12 @@ p.admonition-title {
     margin: 0px 10px 5px 0px;
     font-weight: bold;
 }
-
-div.body p, div.body dd, div.body li {
+div.body p,
+div.body dd,
+div.body li {
     text-align: justify;
     line-height: 130%;
 }
-
 div.body {
     color: #000;
 }
@@ -1376,23 +1445,21 @@ body {
     font-size: 100%;
     color: #000;
 }
-
 p.admonition-title::after {
     content: ":";
 }
-
-div.body p, div.body dd, div.body li {
+div.body p,
+div.body dd,
+div.body li {
     text-align: justify;
     line-height: 130%;
 }
 p.admonition-title {
     font-weight: bold;
 }
-
 div.body {
     color: #000;
 }
-
 body {
     font-family: sans-serif;
     font-size: 100%;
@@ -1401,7 +1468,9 @@ body {
 div.admonition p {
     margin-bottom: 5px;
 }
-div.body p, div.body dd, div.body li {
+div.body p,
+div.body dd,
+div.body li {
     text-align: justify;
     line-height: 130%;
 }
@@ -1415,7 +1484,9 @@ p.admonition-title {
 div.admonition p {
     margin-bottom: 5px;
 }
-div.body p, div.body dd, div.body li {
+div.body p,
+div.body dd,
+div.body li {
     text-align: justify;
     line-height: 130%;
 }
@@ -1435,7 +1506,9 @@ div.admonition p.admonition-title + p {
 div.admonition p {
     margin-bottom: 5px;
 }
-div.body p, div.body dd, div.body li {
+div.body p,
+div.body dd,
+div.body li {
     text-align: justify;
     line-height: 130%;
-N}
+}
