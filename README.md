@@ -12,6 +12,7 @@ Rebuild both/either html and/or singlehtml:
   sphinx-build -b html . _build
 
 I use a local script such as below:
+
 \#!/bin/sh
 rm -rfI /wassup/built-docs/"$1"/"$2"/*
 sphinx-build -b "$1" . /wassup/built-docs/"$1"/"$2"
