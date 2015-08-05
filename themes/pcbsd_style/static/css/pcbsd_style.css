@@ -296,6 +296,10 @@ div.admonition p {
     margin-bottom: 10px;
     padding: 7px;
 }
+div.body p, div.body dd, div.body li {
+    text-align: justify;
+    line-height: 130%;
+}
 .wy-nav-side {
     position: fixed;
     top: 0px;
@@ -333,6 +337,29 @@ div.admonition p {
     display: none;
     visibility: hidden;
     font-size: 14px;
+}
+h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, h4:hover > a.headerlink, h5:hover > a.headerlink, h6:hover > a.headerlink, dt:hover > a.headerlink, caption:hover > a.headerlink, p.caption:hover > a.headerlink, div.code-block-caption:hover > a.headerlink {
+    visibility: visible;
+}
+a.headerlink:hover {
+    background-color: #C60F0F;
+    color: #FFF;
+}
+a.headerlink {
+    color: #C60F0F;
+    font-size: 0.8em;
+    padding: 0px 4px;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a.headerlink {
+    visibility: hidden;
+}
+a {
+    color: #355F7C;
+    text-decoration: none;
 }
 .wy-dropdown .caret,
 .wy-inline-validate.wy-inline-validate-success .wy-input-context,
@@ -625,9 +652,6 @@ a {
 }
 .wy-menu-vertical li.current {
     background: #E3E3E3 none repeat scroll 0% 0%;
-}
-li {
-    list-style: outside none none;
 }
 .wy-breadcrumbs li {
     display: inline-block;
