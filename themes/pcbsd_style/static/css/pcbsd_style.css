@@ -5484,6 +5484,28 @@ table.docutils {
     color: #FCFCFC;
     margin-bottom: 0.809em;
 }
+ .wy-nav-content {
+    padding: 1.618em 3.236em;
+    height: 100%;
+    max-width: 90%;
+    margin: auto;
+}
+.wy-menu-vertical li.on a, .wy-menu-vertical li.current > a {
+//    color: #404040;
+//    padding: 0.4045em 1.618em;
+//    font-weight: bold;
+//    position: relative;
+//    border-width: 1px medium;
+//    border-style: solid none;
+//    border-color: #C9C9C9 -moz-use-text-color;
+//    -moz-border-top-colors: none;
+//    -moz-border-right-colors: none;
+//    -moz-border-bottom-colors: none;
+//    -moz-border-left-colors: none;
+//    border-image: none;
+//    background: rgb(204, 204, 255) none repeat scroll 0% 0%;
+}
+
 
 /*"""""""""""""""""""""""""""""""""""""""""""""""*
  |    Allow for printing from browser            | 
