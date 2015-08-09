@@ -5500,6 +5500,34 @@ table.docutils {
 //    border-image: none;
 //    background: rgb(204, 204, 255) none repeat scroll 0% 0%;
 }
+.wy-table thead th,
+.rst-content table.docutils thead th,
+.rst-content table.field-list thead th {
+    font-weight: bold;
+    border: solid 1px #bbb;
+    border-bottom: solid 2px #bbb;
+}
+
+.wy-table-bordered-all,
+.rst-content table.docutils {
+    border: 1px solid #bbb;
+}
+.wy-table-bordered-all td,
+.rst-content table.docutils td {
+    border-bottom: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+}
+.wy-table-bordered {
+    border: 1px solid #bbb;
+}
+.wy-table-bordered-rows td {
+    border-bottom: 1px solid #bbb;
+}
+.wy-table-horizontal td,
+.wy-table-horizontal th {
+    border-width: 0 0 1px 0;
+    border-bottom: 1px solid #bbb;
+}
 
 /*"""""""""""""""""""""""""""""""""""""""""""""""*
  |    Allow for printing from browser            | 
