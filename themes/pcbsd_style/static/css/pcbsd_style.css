@@ -5319,9 +5319,9 @@ code.file,
 .file {
     background-color: #D5DDE2; /* saturate from ecf0f3 to be more visible/blue on screen. */
     display: inline-block;
-    font-size: 90%!important;
-    vertical-align: -3px;
-    padding: 1px;
+    font-size: 88%!important;
+    vertical-align: -2px!important;
+    padding: 1px!important;
     line-height: 80%!important;
     border: thin solid #999;
 }
