@@ -107,8 +107,8 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'classic'
-#html_theme = 'pcbsd_style'
+#html_theme = 'classic'
+html_theme = 'pcbsd_style'
 #html_theme = 'sphinx_rtd_theme'
 
 
@@ -391,3 +391,4 @@ rst_epilog = """
 .. |pcbsd| replace:: PC-BSD\ |reg|
 """
 
+#-- Directives here -- (or could be in __init__.py ) -----------------------------
