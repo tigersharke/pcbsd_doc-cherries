@@ -3740,9 +3740,51 @@ table.docutils {
  | spiffy_table adjusted for rst/RtD      (END)  | 
  *"""""""""""""""""""""""""""""""""""""""""""""""*/
 
+
 /*"""""""""""""""""""""""""""""""""""""""""""*
  | textboxes adjusted for rst/RtD   (BEGIN)  | 
  *"""""""""""""""""""""""""""""""""""""""""""*/
+.rst-content .danger, .rdangerbox {
+border:solid #BA0000;
+}
+
+.rst-content .warning, .rwarningbox {
+border:solid #8B5A00;
+}
+
+.rst-content .note, .rnotebox {
+border:solid #BABABA;
+}
+
+.rversionbox {
+border:solid #00E100;
+background-color: #d7ffd7!important;
+}
+
+.messagebox {
+border-width:2px 6px 2px 2px;
+border-collapse: collapse;
+margin-top:1px;
+margin-right: 4px;
+margin-bottom:1px;
+margin-left: 4px; 
+text-align:justify;
+width:auto;
+minimum-width:100px;
+maximum-width: 45%;
+font-size: 75%;
+padding: 3px 3px 3px 3px;
+// align:center;
+    display: inline-block;
+    vertical-align:inherit;
+    line-height:125%;
+}
+
+.messageboxicon {
+float:right;
+margin: 0px 2px -2px 0px;
+}
+
 
 /*"""""""""""""""""""""""""""""""""""""""""""*
  | textboxes adjusted for rst/RtD     (END)  | 
