@@ -1930,7 +1930,8 @@ input[type="checkbox"][disabled] {
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
-    margin-bottom: 24px
+    margin-bottom: 24px;
+line-height: 19px;
 }
 .wy-table caption,
 .rst-content table.docutils caption,
@@ -1982,7 +1983,8 @@ input[type="checkbox"][disabled] {
 .wy-table td p,
 .rst-content table.docutils td p,
 .rst-content table.field-list td p {
-    line-height: 18px
+//    line-height: 18px;
+    line-height: 19px;
 }
 .wy-table td p:last-child,
 .rst-content table.docutils td p:last-child,
@@ -2152,7 +2154,7 @@ legend {
     font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
 }
 p {
-    line-height: 24px;
+    line-height: 26px;
     margin: 0;
     font-size: 16px;
     margin-bottom: 24px
@@ -3593,8 +3595,15 @@ code.file,
     vertical-align: -2px!important;
     padding: 1px!important;
     line-height: 80%!important;
+}
+code.kbd, .kbd {
+    border: thin solid rgb(45, 45,255);
+    border-radius: 2px;
+}
+code.file, .file {
     border: thin solid #999;
 }
+
 th {
     background-color: #ede;
 }
@@ -3622,7 +3631,6 @@ div.viewcode-block:target {
     color: inherit;
     display: inline-block;
     font-size: 88%!important;
- //   vertical-align: 10%!important;
     padding-right: 3px;
     padding-left: 3px;
     padding-top: 3px;
