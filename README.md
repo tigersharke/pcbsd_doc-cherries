@@ -12,11 +12,9 @@ Rebuild both/either html and/or singlehtml:
   sphinx-build -b html . _build
 
 I use a local script such as below:
-
-\#!/bin/sh
-
+```
+#!/bin/sh
 rm -rfI /wassup/built-docs/"$1"/"$2"/*
-
 sphinx-build -b "$1" . /wassup/built-docs/"$1"/"$2"
-
+```
 The first value would be html or singlehtml (or any other format sphinx-build would know) and the second value is a way for me to keep pcbsd_style seperate from other theme builds (including as built from original).
