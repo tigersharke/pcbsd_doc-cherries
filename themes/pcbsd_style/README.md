@@ -10,6 +10,7 @@ Revise this value from 'classic' or something else, to 'pcbsd_style' prior to ge
 html_theme = 'pcbsd_style'
                                                               
 Comment out these lines because the build may fail since these don't exist and/or aren't used right now::
+
  \#    "stickysidebar": "true",
  \#    "rightsidebar": "false",
  \#    "sidebarwidth" : "240",
