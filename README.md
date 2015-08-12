@@ -9,8 +9,9 @@ Copy the directory _themes_ and all of its contents into the src-qt/docs directo
 Copy or modify the conf.py to match the one here (locate it in src-qt/docs)
 
 Rebuild both/either html and/or singlehtml:
+```  
   sphinx-build -b html . _build
-
+```
 I use a local script such as below:
 ```
 #!/bin/sh
