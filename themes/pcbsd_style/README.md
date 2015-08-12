@@ -20,6 +20,6 @@ Comment out these lines because the build may fail since these don't exist and/o
    \#    "sidebarbgcolor" : "#696969",
    \#    "bgcolor" : "#fff"
 
-Add or adjust this statement below to match, it is for _additional_ places to search::
+Add or adjust this statement below to match, it is for _additional_ places to search:
 
   html_theme_path = ['themes']
