@@ -1,5 +1,4 @@
 #PC-BSD Style 
-============
 
 ###A new style for _Our_ docs so as to avoid upstream theme changes.
 
