@@ -3349,12 +3349,11 @@ footer p {
     display: inline-block;
     font-weight: bold;
     padding: 0px
-    color: #000;
 }
 
 /* Custom */
 #search-results .highlighted {
-    background: #FAFA00;
+    background: #F1C40F;
     display: inline-block;
     font-weight: bold;
     padding: 0px;
